@@ -18,3 +18,55 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group(['middleware' => 'admin'], function(){
+    
+    Route::resource('/user/posts', 'UserPostController');
+    
+});
+
+Route::group(['middleware' => 'auth'], function(){
+    
+     Route::get('/user/filter/{lab_name?}',[ 
+            
+            'uses' => 'UserPostController@filter',
+            'as' => 'filter'
+        ]);
+        
+        Route::post('/user/search',[ 
+            
+            'uses' => 'UserPostController@search',
+            'as' => 'search'
+        ]);
+        
+        Route::get('/user/posts',[ 
+            
+            'uses' => 'UserPostController@index',
+            'as' => 'user.posts.index'
+        ]);
+        
+        Route::post('/user/posts',[ 
+            
+            'uses' => 'UserPostController@store',
+            'as' => 'user.posts.index'
+        ]);
+        
+        Route::get('/user',[ 
+            
+            'uses' => 'UserPostController@getLab',
+            'as' => 'getlab'
+        ]);
+
+        Route::get('/student', [
+            'uses' => 'StudentController@getStudent',
+            'as' => 'getstudent'
+        ]);
+        
+        Route::post('/showstudent', [
+            'uses' => 'StudentController@showStudent',
+            'as' => 'showstudent'
+        ]); 
+    
+});
+
+       
