@@ -105,8 +105,7 @@ class UserPostController extends Controller
     public function show($id)
     {
         $details = Lab::findOrFail($id);
-        
-    //   return $details;
+
         return view('user.show', compact('details'));
     }
 
@@ -147,7 +146,12 @@ class UserPostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Auth::user()->labs()->whereId($id)->first()->delete();
+        
+        Session::flash('alert-danger', 'Data Successfully Deleted!');
+
+        return redirect()->route('user.posts.index');
+
     }
 
 }

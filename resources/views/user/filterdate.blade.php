@@ -30,6 +30,7 @@
                 <th>CPU IP</th>
                 <th>Created</th>
                 <th>Updated</th>
+                <th>Detail</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -60,6 +61,23 @@
                                     {!! Form::close() !!}
                                 </div>
                             </td>
+                            <td>
+                                @if( $data->user->id == Auth::user()->id )
+                                  <div class="form-goup">
+                                    {!! Form::open(['method' => 'delete', 'action' => ['UserPostController@destroy', $data->id]]) !!}
+                
+                                    <div class="form-goup">
+                                        
+                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']); !!}
+                                        
+                                    </div>
+                                    
+                                    {!! Form::close() !!}
+                                  </div>
+                                @else
+                                    N\A
+                                @endif
+                            </td>
                         </tr>
                         
                     @elseif( $data->user->id == Auth::user()->id )
@@ -82,6 +100,23 @@
                                     
                                     {!! Form::close() !!}
                                 </div>
+                            </td>
+                            <td>
+                                @if( $data->user->id == Auth::user()->id )
+                                  <div class="form-goup">
+                                    {!! Form::open(['method' => 'delete', 'action' => ['UserPostController@destroy', $data->id]]) !!}
+                
+                                    <div class="form-goup">
+                                        
+                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']); !!}
+                                        
+                                    </div>
+                                    
+                                    {!! Form::close() !!}
+                                  </div>
+                                @else
+                                    N\A
+                                @endif
                             </td>
                         </tr>
 

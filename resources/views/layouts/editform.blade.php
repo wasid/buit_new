@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Detail Info</h1>
     @if( $details->user->id == Auth::user()->id )
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-backdrop="static"  data-target="#update_data">Edit Asset Info</button>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-backdrop="static"  data-target="#update_data">Edit Asset Info</button>
     @endif
     <div class="modal fade" id="update_data">
               				<div class="modal-dialog">

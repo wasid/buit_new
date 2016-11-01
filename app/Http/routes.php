@@ -51,7 +51,23 @@ Route::group(['middleware' => 'auth'], function(){
             'as' => 'user.posts.index'
         ]);
         
-        Route::get('/user',[ 
+        Route::get('/user/posts/{posts}',[ 
+            
+            'uses' => 'UserPostController@show',
+            'as' => 'user.posts.show'
+        ]);
+        Route::delete('/user/posts/{posts}',[ 
+            
+            'uses' => 'UserPostController@destroy',
+            'as' => 'user.posts.destroy'
+        ]);
+        Route::patch('/user/posts/{posts}',[ 
+            
+            'uses' => 'UserPostController@update',
+            'as' => 'user.posts.update'
+        ]);
+        
+        Route::get('/users',[ 
             
             'uses' => 'UserPostController@getLab',
             'as' => 'getlab'

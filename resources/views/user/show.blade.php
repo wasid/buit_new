@@ -11,8 +11,8 @@
 
     @include('layouts.editform')
     <div class="container">
+      @if($details)
         <table class="table table-bordered">
-            @if($details)
                 <tbody>
                     <tr>
                       <th>ID</th>
@@ -119,8 +119,21 @@
                         <td>{{ $details->updated_at->diffForHumans() }}</td>
                     </tr>
                 </tbody>
-            @endif
         </table>
+                @if( $details->user->id == Auth::user()->id )
+                  <div class="form-goup">
+                    {!! Form::open(['method' => 'delete', 'action' => ['UserPostController@destroy', $details->id]]) !!}
+
+                    <div class="form-goup">
+                        
+                        {!! Form::submit('Delete Asset Info', ['class' => 'btn btn-danger']); !!}
+                        
+                    </div>
+                    
+                    {!! Form::close() !!}
+                  </div>
+                @endif
+            @endif
     </div>
     
 @stop
