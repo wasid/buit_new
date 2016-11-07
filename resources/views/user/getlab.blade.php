@@ -8,9 +8,10 @@
 @section('content')
  
 @include('include.message')
+<div class="bg"></div>
 <div class="jumbotron text-center">
-  <h1>BRACU IT System</h1>
-  <p>Asset Management Tool.</p>
+ <h1>BRACU IT System</h1>
+  <p class="lead">Asset Management Tool.</p>
 </div>
   @if( Auth::user()->isAdmin() )  
     <div class="container">

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    @yield('head')<title>Laravel</title>
+    @yield('head')<title>BRACU IT</title>
     
     
 
@@ -26,6 +26,55 @@
             margin-right: 6px;
         }
         body { padding-bottom: 60px; }
+        
+        .navbar-default {
+        	background-color:#70a8d3;
+            color:#ffffff;
+          	border-radius:0;
+        }
+        
+        .panel .panel-heading{
+            background-color:#70a8d3;
+        }
+        
+        .navbar-default .navbar-nav > li > a {
+          	color:#fff;
+        }
+        .navbar-default .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+            color: #ffffff;
+        	background-color:transparent;
+        }
+              
+        .navbar-default .navbar-nav > li > a:hover, .nav > li > a:focus {
+            text-decoration: none;
+            background-color: #2C91DE;
+        }
+              
+        .navbar-default .navbar-brand {
+          	color:#eeeeee;
+        }
+        .navbar-default .navbar-toggle {
+          	background-color:#eeeeee;
+        }
+        .navbar-default .icon-bar {
+          	background-color:#33aa33;
+        }
+        .bg {
+          background: url('http://coda-craven.org/wp-content/uploads/2016/10/hi_tech_planet-wide-coda-craven.jpg') no-repeat center center;
+          position: fixed;
+          width: 100%;
+          height: 350px; /*same height as jumbotron */
+          top:0;
+          left:0;
+          z-index: -1;
+        }
+        
+        .jumbotron {
+          height: 350px;
+          color: white;
+          text-shadow: #444 0 1px 1px;
+          background:transparent;
+        }
     </style>
     <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
     <script>
@@ -47,28 +96,41 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ route('getlab') }}">
-                    BRACU IT
-                </a>
+                @if(Auth::guest())
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        BRACU IT
+                    </a>
+                @else
+                    <a class="navbar-brand" href="#">
+                        BRACU IT
+                    </a>
+                @endif
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ route('getlab') }}">Labs</a></li>
-                </ul>
+                @if( Auth::user())
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('user.posts.index') }}">All Data</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('getstudent') }}">Student ID</a></li>
                 </ul>
+                    @if( Auth::user()->isAdmin() )
+                    <ul class="nav navbar-nav">
+                    <li><a href="{{ route('getlab') }}">Labs</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ route('admin.index') }}">Admin Area</a></li>
+                    </ul>
+                    @endif
+                @endif
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <!--<li><a href="{{ url('/register') }}">Register</a></li>-->
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -84,20 +146,31 @@
             </div>
         </div>
     </nav>
-
-    @yield('content')
-
+    <div class="container">
+        @yield('content')
+    </div>
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script   src="https://code.jquery.com/jquery-1.12.4.js"   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <script type="text/javascript">
+        var jumboHeight = $('.jumbotron').outerHeight();
+        function parallax(){
+            var scrolled = $(window).scrollTop();
+            $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+        }
+        
+        $(window).scroll(function(e){
+            parallax();
+        });
+    </script>
 </body>
     <div class="navbar navbar-default navbar-fixed-bottom">
 		<div id="footer">
 			<div class="container">
-			<p class="navbar-text pull-left">Copyright © 2016&nbsp; system@bracuniversity.ac.bd &nbsp;</p>
-			<p class="navbar-text pull-right">Developed by: <a href="https://www.linkedin.com/in/wasid-hossain-976788100" target="_blank">M. M. Wasid Hossain</a></p>
+			<p class="navbar-text pull-left" style="color:#ffffff;">Copyright © 2016&nbsp; system@bracuniversity.ac.bd &nbsp;</p>
+			<p class="navbar-text pull-right" style="color:#ffffff;">Developed by: <a style="color:#165A8E;" href="https://www.linkedin.com/in/wasid-hossain-976788100" target="_blank">M. M. Wasid Hossain</a></p>
 			</div>
 		</div>
     </div>
