@@ -23,10 +23,6 @@
                         <td>{{ $details->user->name }}</td>
                     </tr>
                     <tr>
-                      <th>Location</th>
-                        <td>{{ $details->location_id }}</td>
-                    </tr>
-                    <tr>
                       <th>CPU Name</th>
                         <td>{{ $details->cpu_name }}</td>
                     </tr>
@@ -77,6 +73,14 @@
                     <tr>
                       <th>Monitor Asset No.</th>
                         <td>{{ $details->monitor_assetno }}</td>
+                    </tr>
+                    <tr>
+                      <th>Vendor Name</th>
+                        <td>{{ $details->vendor_name }}</td>
+                    </tr>
+                    <tr>
+                      <th>Delivery Date</th>
+                        <td>{{ $details->delivery_date }}</td>
                     </tr>
                     <tr>
                       <th>Printer</th>

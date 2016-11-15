@@ -32,12 +32,15 @@ class UserPostController extends Controller
     
     public function index()
     {
+        $labname = User::lists('name','name')->all();
         $labinfos = Lab::all();
-        return view('user.index', compact('labinfos'));
+        return view('user.index', compact('labinfos', 'labname'));
     }
     
     public function filter($lab_name = null){
-        
+
+        $labname = User::lists('name','name')->all();
+
         if (!is_null($lab_name)) {
             $filter_lab = User::where('name', $lab_name)->first();
             if ($filter_lab) {
@@ -50,20 +53,59 @@ class UserPostController extends Controller
              $labinfos = Lab::all();
        
         }
-         return view('user.filterindex', compact('labinfos'));
+         return view('user.filterindex', compact('labinfos', 'labname'));
     }
+    
+    // public function filterSearch($lab_name = null){
+        
+    //     if (!is_null($lab_name)) {
+    //         $filter_lab = User::where('name', $lab_name)->first();
+    //         if ($filter_lab) {
+                
+    //             $from = $request->input('from');
+                
+    //             $to = $request->input('to');
+                
+    //             $input = Lab::whereBetween('created_at', [$from, $to])->get();
+                
+    //             $labinfos = $filter_lab->labs()->orderBy('created_at', 'desc')->get();
+    //         }
+    //     }
+        
+    //      return view('user.filterindex', compact('labinfos'));
+    // }
     
     public function search(Request $request)
     {
+        $labname = User::lists('name','name')->all();
         
-        $from = $request->input('from');
-        $to = $request->input('to');
+        $lab_name = $request->input('name');
         
-        $input = Lab::whereBetween('created_at', [$from, $to])->get();
+        $user = User::where('name', $lab_name)->first();
         
-        // return $input;
-        return view('user.filterdate', compact('input'));
-    }
+            if(!is_null($user)){
+            
+                $from = $request->input('from');
+                $to = $request->input('to');
+                
+                $input = $user->labs()->whereBetween('created_at', [$from, $to])->get();
+        
+                return view('user.filterdate', compact('input', 'labname'));
+              
+            }
+            
+            else{
+            
+                $from = $request->input('from');
+                $to = $request->input('to');
+                
+                $input = Lab::whereBetween('created_at', [$from, $to])->get();
+        
+                return view('user.filterdate', compact('input', 'labname'));
+            }
+            
+        }
+
 
     /**
      * Show the form for creating a new resource.

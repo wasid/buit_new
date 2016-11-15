@@ -29,7 +29,7 @@ Route::group(['middleware' => 'admin'], function(){
 
 Route::group(['middleware' => 'auth'], function(){
     
-     Route::get('/user/filter/{lab_name?}',[ 
+        Route::get('/user/filter/{lab_name?}',[ 
             
             'uses' => 'UserPostController@filter',
             'as' => 'filter'

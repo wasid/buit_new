@@ -27,6 +27,6 @@ class CreateStudentTable extends Migration
      */
     public function down()
     {
-        Schema::drop('students');
+        Schema::drop('student');
     }
 }

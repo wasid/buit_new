@@ -12,6 +12,11 @@
     <div class="container">
         <h3 class="text-center">Index Page</h3>
         @include('layouts.datesearchform')
+        
+        <br><br>
+
+        @include('layouts.createform')
+
         <table class="table">
             <thead>
               <tr>

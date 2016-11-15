@@ -76,11 +76,12 @@
           background:transparent;
         }
     </style>
-    <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
-    <script>
-        webshims.setOptions('forms-ext', {types: 'date'});
-        webshims.polyfill('forms forms-ext');
-    </script>
+    <!--<script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>-->
+    <!--<script>-->
+    <!--    webshims.setOptions('forms-ext', {types: 'date'});-->
+    <!--    webshims.polyfill('forms forms-ext');-->
+    <!--</script>-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
@@ -164,6 +165,20 @@
         $(window).scroll(function(e){
             parallax();
         });
+    </script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script>
+    $(function() {
+        // var dateTypeVar = $('#datepicker').datepicker('getDate');
+        // $.datepicker.formatDate('dd-mm-yy', dateTypeVar);
+        $('.datepicker').datepicker({ dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true
+            
+        }).val();
+    
+    });
     </script>
 </body>
     <div class="navbar navbar-default navbar-fixed-bottom">

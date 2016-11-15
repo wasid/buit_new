@@ -16,13 +16,6 @@
     
     <div class="form-group">
         
-        {!! Form::label('location_id', 'Location:'); !!}
-        
-        {!! Form::select('location_id', array(1=>'UB5', 2=>'UB4'), null, ['class' => 'form-control']); !!}
-        
-    </div>
-    <div class="form-group">
-        
         {!! Form::label('cpu_name', 'CPU Name:'); !!}
         
         {!! Form::text('cpu_name', null, ['class' => 'form-control']); !!}
@@ -121,6 +114,22 @@
         {!! Form::label('monitor_assetno', 'Monitor Asset:'); !!}
         
         {!! Form::text('monitor_assetno', null, ['class' => 'form-control']); !!}
+        
+    </div>
+    
+    <div class="form-group">
+        
+        {!! Form::label('vendor_name', 'Vendor Name:'); !!}
+        
+        {!! Form::text('vendor_name', null, ['class' => 'form-control']); !!}
+        
+    </div>
+    
+    <div class="form-group">
+        
+        {!! Form::label('delivery_date', 'Delivery Date:'); !!}
+        
+        {!! Form::text('delivery_date', null, ['class' => 'form-control']); !!}
         
     </div>
     

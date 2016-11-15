@@ -21,6 +21,8 @@ class Lab extends Model
         'hdd',
         'monitor',
         'monitor_assetno',
+        'vendor_name',
+        'delivery_date',
         'printer',
         'printer_assetno',
         'scanner',

@@ -15,7 +15,6 @@ class CreateLabsTable extends Migration
         Schema::create('labs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable()->index();
-            $table->integer('location_id')->unsigned()->nullable()->index();
             $table->string('cpu_name');
 			$table->string('cpu_assetno');
 			$table->string('ip')->unique();
@@ -29,6 +28,8 @@ class CreateLabsTable extends Migration
 			$table->string('hdd');
 			$table->string('monitor');
 			$table->string('monitor_assetno');
+			$table->string('vendor_name');
+			$table->string('delivery_date');
 			$table->string('printer');
 			$table->string('printer_assetno');
 			$table->string('scanner');

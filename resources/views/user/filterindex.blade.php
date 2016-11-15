@@ -13,16 +13,9 @@
     
     <div class="container">
         <h1 class="text-center">Filter Results</h1>
-        <h4>Search By Date:</h4>
-        <div class="form-group">
-        <form method="post" action="{{ route('search') }}">
-            Enter a date From:<br>
-            <input type="date" name="from"><br><br>
-            Enter a date To:<br>
-            <input type="date" name="to"><br><br>
-            <input type="submit" value="submit" class="btn btn-primary">
-            <input type="hidden" name="_token" value="{{ Session::token() }}">
-        </form>
+        
+                    @include('layouts.datesearchform')
+        
         <table class="table">
             <thead>
               <tr>

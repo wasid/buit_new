@@ -1,18 +1,42 @@
     <div class="row">
-        <div class="col-sm-8">
-            @include('layouts.createform')
-        </div>
         <div class="col-sm-4">
-            <div class="pull-right">
-                <h4>Search By Date:</h4>
-                <form method="post" action="{{ route('search') }}">
-                    Enter a date From:<br>
-                    <input type="date" id="from" name="from"><br><br>
-                    Enter a date To:<br>
-                    <input type="date" id="to" name="to"><br><br>
-                    <input type="submit" value="submit" class="btn btn-primary btn-sm">
-                    <input type="hidden" name="_token" value="{{ Session::token() }}">
-                </form>
-            </div>
+
+            <h4>Search By Date:</h4>
+
+            {!! Form::open([ 'method' => 'post', 'action' => 'UserPostController@search']) !!}
+                   
+                    <div class="form-group">
+        
+                        {!! Form::label('from', 'Enter a date From:'); !!}
+                        
+                        {!! Form::text('from', null, ['class' => 'form-control datepicker']); !!}
+                        
+                    </div>
+                     <div class="form-group">
+        
+                        {!! Form::label('to', 'Enter a date To:'); !!}
+                        
+                        {!! Form::text('to', null, ['class' => 'form-control datepicker']); !!}
+                        
+                    </div>
+                    
+                    @if( Auth::user()->isAdmin() )
+                    
+                    <div class="form-group">
+                
+                        {!! Form::label('name', 'Lab Name:'); !!}
+                        
+                        {!! Form::select('name', ['' => 'Choose One'] + $labname, null, ['class' => 'form-control']); !!}
+                        
+                    </div>
+                    
+                    @endif                    
+
+                    <div class="form-goup">
+                        
+                        {!! Form::submit('Search', ['class' => 'btn btn-primary']); !!}
+                        
+                    </div>
+            {!! Form::close() !!}
         </div>
     </div>
