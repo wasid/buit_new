@@ -25,6 +25,7 @@ Route::group(['middleware' => 'admin'], function(){
     
     Route::resource('/admin', 'AdminUsersController');
     
+    
 });
 
 Route::group(['middleware' => 'auth'], function(){
@@ -84,6 +85,16 @@ Route::group(['middleware' => 'auth'], function(){
             'uses' => 'StudentController@showStudent',
             'as' => 'showstudent'
         ]); 
+        
+        Route::get('/changepassword', [
+            'uses' => 'UserPostController@changePassword',
+            'as' => 'changepassword'
+        ]);
+        
+        Route::post('/newpassword', [
+            'uses' => 'UserPostController@newPassword',
+            'as' => 'newpassword'
+        ]);
     
 });
 

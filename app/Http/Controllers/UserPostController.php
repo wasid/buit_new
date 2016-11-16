@@ -195,5 +195,37 @@ class UserPostController extends Controller
         return redirect()->route('user.posts.index');
 
     }
+    
+    public function changePassword()
+    {
+        
+        return view('user.changepassword');
+
+    }
+    
+    public function newPassword(Request $request)
+    {
+        $this->validate($request, [
+            
+                    'old_password'	=> 'required',
+					'password' 		=> 'required|different:old_password|min:6',
+					'password_again'=> 'required|different:old_password|same:password'
+
+            ]);
+            
+            $user = User::findOrFail(Auth::user()->id);
+            $input = $request->input();
+            //Change Password if password value is set
+            if ($input['password'] != "") {
+               //dd(bcrypt($input['password']));
+               $input['password'] = bcrypt($input['password']);
+            }
+            $user->fill($input)->save();
+            
+        Session::flash('alert-info', 'Password Updated Successfully!');
+        
+        return redirect()->back();;
+
+    }
 
 }
