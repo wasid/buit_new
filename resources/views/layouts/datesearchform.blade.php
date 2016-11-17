@@ -1,5 +1,12 @@
-    <div class="row">
-        <div class="col-sm-4">
+<div class="row">
+        
+    <div class="search-container">
+                                        
+           <!--<div class="search-button">-->
+               <button id="toggle-search" class="btn btn-primary">Search</button>
+           <!--</div>-->
+        
+        <div class="search-bar col-sm-4">
 
             <h4>Search By Date:</h4>
 
@@ -39,4 +46,5 @@
                     </div>
             {!! Form::close() !!}
         </div>
-    </div>
+    </div>    
+</div>

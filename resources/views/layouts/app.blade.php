@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
+
     <style>
         body {
             font-family: 'Lato';
@@ -74,6 +75,9 @@
           color: white;
           text-shadow: #444 0 1px 1px;
           background:transparent;
+        }
+        .search-bar{
+            display:none;
         }
     </style>
     <!--<script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>-->
@@ -155,31 +159,9 @@
     <script   src="https://code.jquery.com/jquery-1.12.4.js"   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-    <script type="text/javascript">
-        var jumboHeight = $('.jumbotron').outerHeight();
-        function parallax(){
-            var scrolled = $(window).scrollTop();
-            $('.bg').css('height', (jumboHeight-scrolled) + 'px');
-        }
-        
-        $(window).scroll(function(e){
-            parallax();
-        });
-    </script>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-    <script>
-    $(function() {
-        // var dateTypeVar = $('#datepicker').datepicker('getDate');
-        // $.datepicker.formatDate('dd-mm-yy', dateTypeVar);
-        $('.datepicker').datepicker({ dateFormat: 'yy-mm-dd',
-            changeMonth: true,
-            changeYear: true
-            
-        }).val();
-    
-    });
-    </script>
+    <script type="text/javascript" src="{!! asset('js/applyjs.js') !!}"></script>
 </body>
     <div class="navbar navbar-default navbar-fixed-bottom">
 		<div id="footer">
