@@ -2,9 +2,9 @@
         
     <div class="search-container">
                                         
-           <!--<div class="search-button">-->
+           <div class="search-button">
                <button id="toggle-search" class="btn btn-primary">Search</button>
-           <!--</div>-->
+           </div>
         
         <div class="search-bar col-sm-4">
 

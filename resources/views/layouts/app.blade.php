@@ -80,11 +80,7 @@
             display:none;
         }
     </style>
-    <!--<script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>-->
-    <!--<script>-->
-    <!--    webshims.setOptions('forms-ext', {types: 'date'});-->
-    <!--    webshims.polyfill('forms forms-ext');-->
-    <!--</script>-->
+    <!-- datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 </head>
 <body id="app-layout">
@@ -159,8 +155,10 @@
     <script   src="https://code.jquery.com/jquery-1.12.4.js"   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <!-- datepicker -->
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <!-- datepicker -->
     <script type="text/javascript" src="{!! asset('js/applyjs.js') !!}"></script>
 </body>
     <div class="navbar navbar-default navbar-fixed-bottom">

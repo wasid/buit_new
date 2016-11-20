@@ -125,19 +125,16 @@
                 </tbody>
         </table>
                 @if( $details->user->id == Auth::user()->id )
-                  <div class="form-goup">
-                    {!! Form::open(['method' => 'delete', 'action' => ['UserPostController@destroy', $details->id]]) !!}
-
-                    <div class="form-goup">
-                        
-                        {!! Form::submit('Delete Asset Info', ['class' => 'btn btn-danger']); !!}
-                        
-                    </div>
+                
+                  {!! Form::open(['method' => 'delete', 'action' => ['UserPostController@destroy', $details->id]]) !!}
+                  
+                    @include('layouts.deleteform')
                     
-                    {!! Form::close() !!}
-                  </div>
+                  {!! Form::close() !!}
+                
                 @endif
-            @endif
+                
+        @endif
     </div>
     
 @stop

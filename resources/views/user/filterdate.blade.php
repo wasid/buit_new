@@ -55,17 +55,19 @@
                             </td>
                             <td>
                                 @if( $data->user->id == Auth::user()->id )
-                                  <div class="form-goup">
+                                  
                                     {!! Form::open(['method' => 'delete', 'action' => ['UserPostController@destroy', $data->id]]) !!}
-                
-                                    <div class="form-goup">
-                                        
-                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']); !!}
-                                        
+            
+                                    <div class="clearfix">
+                              			<a href="#" data-toggle="modal" data-target="#info_delete{{ $data->id }}" class="btn btn-danger btn-md">Delete</a>
                                     </div>
+                                       <!--modal-->
+                                 	<div class="modal fade" id="info_delete{{ $data->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+    
+                                    @include('layouts.deleteformid')
                                     
                                     {!! Form::close() !!}
-                                  </div>
+                                  
                                 @else
                                     N\A
                                 @endif
@@ -95,17 +97,18 @@
                             </td>
                             <td>
                                 @if( $data->user->id == Auth::user()->id )
-                                  <div class="form-goup">
+                                  
                                     {!! Form::open(['method' => 'delete', 'action' => ['UserPostController@destroy', $data->id]]) !!}
-                
-                                    <div class="form-goup">
-                                        
-                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']); !!}
-                                        
+                                    
+                                    <div class="clearfix">
+                              			<a href="#" data-toggle="modal" data-target="#info_delete{{ $data->id }}" class="btn btn-danger btn-md">Delete</a>
                                     </div>
+                                       <!--modal-->
+                                 	<div class="modal fade" id="info_delete{{ $data->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+                                    @include('layouts.deleteformid')
                                     
                                     {!! Form::close() !!}
-                                  </div>
+                                  
                                 @else
                                     N\A
                                 @endif
