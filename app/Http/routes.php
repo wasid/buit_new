@@ -95,7 +95,5 @@ Route::group(['middleware' => 'auth'], function(){
             'uses' => 'UserPostController@newPassword',
             'as' => 'newpassword'
         ]);
-    
+        
 });
-
-       
