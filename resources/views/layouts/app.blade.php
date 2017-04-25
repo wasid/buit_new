@@ -133,6 +133,13 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <!--<li><a href="{{ url('/register') }}">Register</a></li>-->
                     @else
+                        <form class="navbar-form navbar-left" action="{{ route('searchall') }}" method="post">
+                            <div class="form-group">
+                              <input type="text" name="searchall" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-warning">Submit</button>
+                            <input type="hidden" name="_token" value="{{ Session::token() }}">
+                        </form>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>

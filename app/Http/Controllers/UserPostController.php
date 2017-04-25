@@ -105,6 +105,12 @@ class UserPostController extends Controller
             }
             
         }
+        
+    public function searchAll(Request $request){
+        $input = $request->input('searchall');
+        $data = Lab::where('cpu_name', $input)->orWhere('mac', $input)->orWhere('ip', $input)->get();
+        return $data;
+    }
 
 
     /**

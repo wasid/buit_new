@@ -96,4 +96,9 @@ Route::group(['middleware' => 'auth'], function(){
             'as' => 'newpassword'
         ]);
         
+        Route::post('/searchall', [
+            'uses' => 'UserPostController@searchAll',
+            'as' => 'searchall'
+        ]);
+        
 });
