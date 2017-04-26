@@ -132,17 +132,32 @@ class UserPostController extends Controller
      */
     public function store(Request $request)
     {
-        
-        
+        try{
         $input = $request->all();
-        
+   
+        // return $input;
+   
         $user = Auth::user();
         
         $user->labs()->create($input);
         
         Session::flash('alert-info', 'Data Successfully Added!');
         
-        return redirect()->back();;
+        return redirect()->back();
+        }
+        
+        catch(\Illuminate\Database\QueryException $e){
+
+            $errorCode = $e->errorInfo[1];
+            
+            if($errorCode == 1062){
+                
+                Session::flash('alert-warning',"We found a duplicate entry! Please try again with valid input!");
+                
+                return redirect()->back();
+            }        
+
+        }
     }
 
     /**

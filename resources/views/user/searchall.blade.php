@@ -33,8 +33,6 @@
                    
                     @include('include.labinfo')
                     
-
-                
                 @endforeach
              </tbody>
     

@@ -37,6 +37,7 @@ class CreateLabsTable extends Migration
 			$table->string('ups');
 			$table->string('ups_assetno');
 			$table->string('department');
+			$table->string('status');
 			$table->text('comment');
             $table->timestamps();
             

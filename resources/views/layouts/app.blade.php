@@ -171,7 +171,7 @@
     <div class="navbar navbar-default navbar-fixed-bottom">
 		<div id="footer">
 			<div class="container">
-			<p class="navbar-text pull-left" style="color:#ffffff;">Copyright © 2016&nbsp; system@bracuniversity.ac.bd &nbsp;</p>
+			<p class="navbar-text pull-left" style="color:#ffffff;">Copyright © <?php echo date("Y"); ?>&nbsp; system@bracuniversity.ac.bd &nbsp;</p>
 			<p class="navbar-text pull-right" style="color:#ffffff;">Developed by: <a style="color:#165A8E;" href="https://www.linkedin.com/in/wasid-hossain-976788100" target="_blank">M. M. Wasid Hossain</a></p>
 			</div>
 		</div>
