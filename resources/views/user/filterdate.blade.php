@@ -30,95 +30,13 @@
             @if($input)
             <tbody>
             
-                @foreach($input as $index => $data)
+                @foreach($input as $index => $labinfo)
                     
-                    @if(Auth::user()->isAdmin())
-                       
-                        <tr>
-                            <td>{{ $index+1 }}</td>
-                            <td><a href="{{ route('filter', ['lab_name' => $data->user->name]) }}">{{ $data->user->name }}</a></td>
-                            <td>{{ $data->ip }}</td>
-                            <td>{{ $data->created_at }}</td>
-                            <td>{{ $data->updated_at }}</td>
-                            <td>
-                                <div class="form-goup">
-                                    {!! Form::open([ 'method' => 'get', 'action' => ['UserPostController@show', $data->id]]) !!}
-                                    
-                                    <div class="form-goup">
-                                        
-                                        {!! Form::submit('Show Detail', ['class' => 'btn btn-success']); !!}
-                                        
-                                    </div>
-                                    
-                                    {!! Form::close() !!}
-                                </div>
-                            </td>
-                            <td>
-                                @if( $data->user->id == Auth::user()->id )
-                                  
-                                    {!! Form::open(['method' => 'delete', 'action' => ['UserPostController@destroy', $data->id]]) !!}
-            
-                                    <div class="clearfix">
-                              			<a href="#" data-toggle="modal" data-target="#info_delete{{ $data->id }}" class="btn btn-danger btn-md">Delete</a>
-                                    </div>
-                                       <!--modal-->
-                                 	<div class="modal fade" id="info_delete{{ $data->id }}" tabindex="-1" role="dialog" aria-hidden="true">
-    
-                                    @include('layouts.deleteformid')
-                                    
-                                    {!! Form::close() !!}
-                                  
-                                @else
-                                    N\A
-                                @endif
-                            </td>
-                        </tr>
-                        
-                    @elseif( $data->user->id == Auth::user()->id )
-                    
-                        <tr>
-                            <td>{{ $index+1 }}</td>
-                            <td><a href="{{ route('filter', ['lab_name' => $data->user->name]) }}">{{ $data->user->name }}</a></td>
-                            <td>{{ $data->ip }}</td>
-                            <td>{{ $data->created_at }}</td>
-                            <td>{{ $data->updated_at }}</td>
-                            <td>
-                                <div class="form-goup">
-                                    {!! Form::open([ 'method' => 'get', 'action' => ['UserPostController@show', $data->id]]) !!}
-                                    
-                                    <div class="form-goup">
-                                        
-                                        {!! Form::submit('Show Detail', ['class' => 'btn btn-success']); !!}
-                                        
-                                    </div>
-                                    
-                                    {!! Form::close() !!}
-                                </div>
-                            </td>
-                            <td>
-                                @if( $data->user->id == Auth::user()->id )
-                                  
-                                    {!! Form::open(['method' => 'delete', 'action' => ['UserPostController@destroy', $data->id]]) !!}
-                                    
-                                    <div class="clearfix">
-                              			<a href="#" data-toggle="modal" data-target="#info_delete{{ $data->id }}" class="btn btn-danger btn-md">Delete</a>
-                                    </div>
-                                       <!--modal-->
-                                 	<div class="modal fade" id="info_delete{{ $data->id }}" tabindex="-1" role="dialog" aria-hidden="true">
-                                    @include('layouts.deleteformid')
-                                    
-                                    {!! Form::close() !!}
-                                  
-                                @else
-                                    N\A
-                                @endif
-                            </td>
-                        </tr>
-
-                    @endif
+                    @include('include.labinfo')
                     
                 @endforeach
-             </tbody>
+            
+            </tbody>
     
             @endif
         </table>

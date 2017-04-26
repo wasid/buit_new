@@ -9,12 +9,9 @@
  
 @include('include.message')
 
-    @include('layouts.createform')
     
     <div class="container">
-        <h1 class="text-center">Filter Results</h1>
-        
-                    @include('layouts.datesearchform')
+        <h1 class="text-center">Search Results</h1>
         
         <table class="table">
             <thead>
@@ -29,13 +26,15 @@
               </tr>
             </thead>
             
-            @if($labinfos)
+            @if($labdata)
             <tbody>
             
-                @foreach($labinfos as $index => $labinfo)
+                @foreach($labdata as $index => $labinfo)
                    
                     @include('include.labinfo')
                     
+
+                
                 @endforeach
              </tbody>
     
