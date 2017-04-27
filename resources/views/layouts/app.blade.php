@@ -11,11 +11,12 @@
 
     <!-- Fonts -->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css">
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
+    
     <!-- Styles -->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css">
     <link href="/css/app.css" rel="stylesheet">
 
 
@@ -137,9 +138,9 @@
                     @else
                         <form class="navbar-form navbar-left" action="{{ route('searchall') }}" method="post">
                             <div class="form-group">
-                              <input type="text" name="searchall" class="form-control" placeholder="Search">
+                              <input type="text" name="searchall" id="search_all" class="form-control" placeholder="Search">
                             </div>
-                            <button type="submit" class="btn btn-warning">Submit</button>
+                            <button type="submit" id="find" class="btn btn-warning">Find</button>
                             <input type="hidden" name="_token" value="{{ Session::token() }}">
                         </form>
                         <li class="dropdown">
@@ -168,8 +169,8 @@
     <div class="navbar navbar-default navbar-fixed-bottom">
 		<div id="footer">
 			<div class="container">
-			<p class="navbar-text pull-left" style="color:#ffffff;">Copyright © <?php echo date("Y"); ?>&nbsp; system@bracuniversity.ac.bd &nbsp;</p>
-			<p class="navbar-text pull-right" style="color:#ffffff;">Developed by: <a href="https://www.linkedin.com/in/wasid-hossain-976788100" target="_blank">M. M. Wasid Hossain</a></p>
+			<p class="navbar-text text-center" style="color:#ffffff;">Copyright © <?php echo date("Y"); ?>&nbsp; system@bracuniversity.ac.bd &nbsp;</p>
+			<!--<p class="navbar-text pull-right" style="color:#ffffff;">Developed by: <a href="https://www.linkedin.com/in/wasid-hossain-976788100" target="_blank">M. M. Wasid Hossain</a></p>-->
 			</div>
 		</div>
     </div>

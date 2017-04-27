@@ -11,7 +11,7 @@
 <div class="bg"></div>
 <div class="jumbotron text-center">
  <h1>BRACU IT System</h1>
-  <p class="lead">Asset Management Tool.</p>
+  <h2 class="lead">Asset Management Tool.</h2>
 </div>
   @if( Auth::user()->isAdmin() )  
     <div class="container">

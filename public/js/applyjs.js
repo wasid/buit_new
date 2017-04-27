@@ -22,7 +22,11 @@ $(document).ready(function(){
     
     //search button
     $('#toggle-search').click(function(){
-       $('.search-bar').slideToggle();
+      $('.search-bar').slideToggle();
+    });   
+    
+    $('#find').hover(function(){
+      $('#search_all').show({width:'slide'},350);
     });
     
     // //delete information
