@@ -26,7 +26,7 @@
               </tr>
             </thead>
             
-            @if($labdata)
+            @if(!$labdata->isEmpty())
             <tbody>
             
                 @foreach($labdata as $index => $labinfo)
@@ -35,7 +35,8 @@
                     
                 @endforeach
              </tbody>
-    
+            @else
+                <h1 class="text-center">No Data Found!</h1>
             @endif
         </table>
     </div>
