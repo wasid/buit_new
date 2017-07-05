@@ -29,6 +29,10 @@ $(document).ready(function(){
       $('#search_all').show({width:'slide'},350);
     });
     
+    $('#find_id').hover(function(){
+      $('#search_id').show({width:'slide'},350);
+    });
+    
     // //delete information
     // $(".delete_info").click(function(event) {
     //     var _this = $(this);
