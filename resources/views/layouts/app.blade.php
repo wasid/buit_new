@@ -16,73 +16,8 @@
     
     <!-- Styles -->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css">
     <link href="/css/app.css" rel="stylesheet">
-
-
-    <style>
-        /*body {*/
-        /*    font-family: 'Lato';*/
-        /*    padding-bottom: 60px;*/
-        /*}*/
-
-        /*.fa-btn {*/
-        /*    margin-right: 6px;*/
-        /*}*/
-        /*.btn{border-radius: 30px;}*/
-        
-        /*.navbar-default {*/
-        /*	background-color:#70a8d3;*/
-        /*    color:#ffffff;*/
-        /*  	border-radius:0;*/
-        /*}*/
-        
-        /*.panel .panel-heading{*/
-        /*    background-color:#70a8d3;*/
-        /*}*/
-        
-        /*.navbar-default .navbar-nav > li > a {*/
-        /*  	color:#fff;*/
-        /*}*/
-        /*.navbar-default .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {*/
-        /*    color: #ffffff;*/
-        /*	background-color:transparent;*/
-        /*}*/
-              
-        /*.navbar-default .navbar-nav > li > a:hover, .nav > li > a:focus {*/
-        /*    text-decoration: none;*/
-        /*    background-color: #2C91DE;*/
-        /*}*/
-              
-        /*.navbar-default .navbar-brand {*/
-        /*  	color:#eeeeee;*/
-        /*}*/
-        /*.navbar-default .navbar-toggle {*/
-        /*  	background-color:#eeeeee;*/
-        /*}*/
-        /*.navbar-default .icon-bar {*/
-        /*  	background-color:#33aa33;*/
-        /*}*/
-        /*.bg {*/
-        /*  background: url('http://coda-craven.org/wp-content/uploads/2016/10/hi_tech_planet-wide-coda-craven.jpg') no-repeat center center;*/
-        /*  position: fixed;*/
-        /*  width: 100%;*/
-         /* height: 350px; /*same height as jumbotron 
-        /*  top:0;*/
-        /*  left:0;*/
-        /*  z-index: -1;*/
-        /*}*/
-        
-        /*.jumbotron {*/
-        /*  height: 350px;*/
-        /*  color: white;*/
-        /*  text-shadow: #444 0 1px 1px;*/
-        /*  background:transparent;*/
-        /*}*/
-        /*.search-bar{*/
-        /*    display:none;*/
-        /*}*/
-    </style>
     <!-- datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 </head>
