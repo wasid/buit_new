@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    @yield('head')<title>BRACU IT</title>
+    @yield('head')<title>BRACU ICT</title>
     
     
 
@@ -37,11 +37,11 @@
                 <!-- Branding Image -->
                 @if(Auth::guest())
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        BRACU IT
+                        BRACU ICT
                     </a>
                 @else
                     <a class="navbar-brand" href="{{ url('/users') }}">
-                        BRACU IT
+                        BRACU ICT
                     </a>
                 @endif
             </div>

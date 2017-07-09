@@ -10,7 +10,7 @@
 @include('include.message')
 <div class="bg"></div>
 <div class="jumbotron text-center">
- <h1>BRACU IT System</h1>
+ <h1>BRACU ICT System</h1>
   <h2 class="lead">Asset Management Tool.</h2>
 </div>
   @if( Auth::user()->isAdmin() )  
