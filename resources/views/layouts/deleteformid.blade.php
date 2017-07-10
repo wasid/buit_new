@@ -14,7 +14,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-					<button type="sumbit" class="btn btn-primary">Delete</button>
+					<button type="sumbit" class="btn btn-danger">Delete</button>
 				</div>
 			</div>
 		</div>

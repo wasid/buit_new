@@ -62,12 +62,13 @@
         <div class="form-goup">
             {!! Form::open([ 'method' => 'delete', 'action' => ['AdminUsersController@destroy', $user->id]]) !!}
             
-            <div class="form-goup">
-                
-                {!! Form::submit('Delete User', ['class' => 'btn btn-danger  col-sm-6']); !!}
-                
+            <div class="clearfix">
+      			<a href="#" data-toggle="modal" data-target="#info_delete" class="btn btn-danger col-sm-6">Delete</a>
             </div>
-            
+               <!--modal-->
+         	<div class="modal fade" id="info_delete" tabindex="-1" role="dialog" aria-hidden="true">
+            @include('layouts.deleteformid')
+
             {!! Form::close() !!}
         </div>
 
