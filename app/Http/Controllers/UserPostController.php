@@ -33,7 +33,7 @@ class UserPostController extends Controller
     public function index()
     {
         $labname = User::lists('name','name')->all();
-        $labinfos = Lab::all();
+        $labinfos = Lab::paginate(15);
         return view('user.index', compact('labinfos', 'labname'));
     }
     

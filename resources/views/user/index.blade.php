@@ -17,17 +17,11 @@
 
         @include('layouts.createform')
 
+        <div class="text-center">{{ $labinfos->links() }}</div>
+        
         <table class="table">
             <thead>
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>CPU IP</th>
-                <th>Created</th>
-                <th>Updated</th>
-                <th>Detail</th>
-                <th>Action</th>
-              </tr>
+                @include('include.labparam')
             </thead>
             
             @if($labinfos)
@@ -42,5 +36,6 @@
     
             @endif
         </table>
+        <div class="text-center">{{ $labinfos->links() }}</div>
     </div>
 @stop

@@ -4,6 +4,11 @@
         <td>{{ $index+1 }}</td>
         <td><a href="{{ route('filter', ['lab_name' => $labinfo->user->name]) }}">{{ $labinfo->user->name }}</a></td>
         <td>{{ $labinfo->ip }}</td>
+        <td>{{ $labinfo->processor }}</td>
+        <td>{{ $labinfo->motherboard }}</td>
+        <td>{{ $labinfo->ram }}</td>
+        <td>{{ $labinfo->hdd }}</td>
+        <td>{{ $labinfo->monitor }}</td>
         <td>{{ $labinfo->created_at->diffForHumans() }}</td>
         <td>{{ $labinfo->updated_at->diffForHumans() }}</td>
         <td>
@@ -41,8 +46,13 @@
 
     <tr>
         <td>{{ $index+1 }}</td>
-         <td><a href="{{ route('filter', ['lab_name' => $labinfo->user->name]) }}">{{ $labinfo->user->name }}</a></td>
+        <td><a href="{{ route('filter', ['lab_name' => $labinfo->user->name]) }}">{{ $labinfo->user->name }}</a></td>
         <td>{{ $labinfo->ip }}</td>
+        <td>{{ $labinfo->processor }}</td>
+        <td>{{ $labinfo->motherboard }}</td>
+        <td>{{ $labinfo->ram }}</td>
+        <td>{{ $labinfo->hdd }}</td>
+        <td>{{ $labinfo->monitor }}</td>
         <td>{{ $labinfo->created_at->diffForHumans() }}</td>
         <td>{{ $labinfo->updated_at->diffForHumans() }}</td>
         <td>
