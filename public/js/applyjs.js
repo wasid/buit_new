@@ -32,16 +32,5 @@ $(document).ready(function(){
     $('#find_id').hover(function(){
       $('#search_id').show({width:'slide'},350);
     });
-    
-    // //delete information
-    // $(".delete_info").click(function(event) {
-    //     var _this = $(this);
-        
-    //     // alert(event.target.id);
 
-    //     $("#btn_delete_rec").prop('href', '/user/posts/' + event.target.id + '/delete');
-    //     // $("#btn_delete_rec").prop('action', "{{action('UserPostController@getDestroy')}}");
-       
-
-    // });
 });
