@@ -108,7 +108,17 @@ class UserPostController extends Controller
         
     public function searchAll(Request $request){
         $input = $request->input('searchall');
-        $labdata = Lab::where('cpu_name', $input)->orWhere('mac', $input)->orWhere('ip', $input)->get();
+        $labdata = Lab::where('cpu_name', $input)
+                        ->orWhere('mac', $input)
+                        ->orWhere('ip', $input)
+                        ->orWhere('cpu_assetno', $input)
+                        ->orWhere('monitor_assetno', $input)
+                        ->orWhere('printer_assetno', $input)
+                        ->orWhere('scanner_assetno', $input)
+                        ->orWhere('ups_assetno', $input)
+                        ->orWhere('department', $input)
+                        ->orWhere('vendor_name', $input)
+                        ->orWhere('comment', $input)->get();
         
         return view('user.searchall', compact('labdata'));
     }

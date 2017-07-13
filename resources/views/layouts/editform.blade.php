@@ -198,7 +198,7 @@
     
     <div class="form-goup">
         
-        {!! Form::submit('Create Post', ['class' => 'btn btn-primary']); !!}
+        {!! Form::submit('Update Info', ['class' => 'btn btn-primary']); !!}
         
     </div>
     
