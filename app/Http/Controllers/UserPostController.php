@@ -107,18 +107,19 @@ class UserPostController extends Controller
         }
         
     public function searchAll(Request $request){
-        $input = $request->input('searchall');
-        $labdata = Lab::where('cpu_name', $input)
-                        ->orWhere('mac', $input)
-                        ->orWhere('ip', $input)
-                        ->orWhere('cpu_assetno', $input)
-                        ->orWhere('monitor_assetno', $input)
-                        ->orWhere('printer_assetno', $input)
-                        ->orWhere('scanner_assetno', $input)
-                        ->orWhere('ups_assetno', $input)
-                        ->orWhere('department', $input)
-                        ->orWhere('vendor_name', $input)
-                        ->orWhere('comment', $input)->get();
+        $input = '%'. $request->input('searchall') .'%';
+        $labdata = Lab::where('cpu_name', 'LIKE', $input)
+                        ->orWhere('mac', 'LIKE', $input)
+                        ->orWhere('ip', 'LIKE', $input)
+                        ->orWhere('processor', 'LIKE', $input)
+                        ->orWhere('cpu_assetno', 'LIKE', $input)
+                        ->orWhere('monitor_assetno', 'LIKE', $input)
+                        ->orWhere('printer_assetno', 'LIKE', $input)
+                        ->orWhere('scanner_assetno', 'LIKE', $input)
+                        ->orWhere('ups_assetno', 'LIKE', $input)
+                        ->orWhere('department', 'LIKE', $input)
+                        ->orWhere('vendor_name', 'LIKE', $input)
+                        ->orWhere('comment', 'LIKE', $input)->get();
         
         return view('user.searchall', compact('labdata'));
     }
