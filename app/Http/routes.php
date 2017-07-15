@@ -102,3 +102,8 @@ Route::group(['middleware' => 'auth'], function(){
         ]);
         
 });
+
+
+// Sweet Alert Test Route
+
+Route::get('my-notification/{type}', 'UserPostController@myNotification');
