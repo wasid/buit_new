@@ -9,6 +9,8 @@
  
 @include('include.message')
 
+@include('sweet::alert')
+
     
     <div class="container">
         <h1 class="text-center">Search Results</h1>

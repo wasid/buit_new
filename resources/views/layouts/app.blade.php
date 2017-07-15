@@ -20,6 +20,10 @@
     <link href="/css/app.css" rel="stylesheet">
     <!-- datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <!--Sweet Alert CSS CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <!--Sweet Alert JS CDN Which must be added before including sweet alert in the view-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">

@@ -17,6 +17,8 @@ use DB;
 
 use Auth;
 
+use Alert;
+
 class UserPostController extends Controller
 {
     /**
@@ -120,6 +122,8 @@ class UserPostController extends Controller
                         ->orWhere('department', 'LIKE', $input)
                         ->orWhere('vendor_name', 'LIKE', $input)
                         ->orWhere('comment', 'LIKE', $input)->get();
+        
+        Alert::success('Search Results!');
         
         return view('user.searchall', compact('labdata'));
     }
