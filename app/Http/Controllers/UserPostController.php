@@ -55,7 +55,10 @@ class UserPostController extends Controller
              $labinfos = Lab::all();
        
         }
-         return view('user.filterindex', compact('labinfos', 'labname'));
+        
+        Alert::success('Filter Search Results!');
+        
+        return view('user.filterindex', compact('labinfos', 'labname'));
     }
     
     // public function filterSearch($lab_name = null){
@@ -91,6 +94,8 @@ class UserPostController extends Controller
                 $to = $request->input('to');
                 
                 $input = $user->labs()->whereBetween('created_at', [$from, $to])->get();
+                
+                Alert::success('Search Results By Date!');
         
                 return view('user.filterdate', compact('input', 'labname'));
               
@@ -102,6 +107,8 @@ class UserPostController extends Controller
                 $to = $request->input('to');
                 
                 $input = Lab::whereBetween('created_at', [$from, $to])->get();
+                
+                Alert::success('Search Results By Date!');
         
                 return view('user.filterdate', compact('input', 'labname'));
             }

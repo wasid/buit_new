@@ -25,3 +25,6 @@
         @endif
       @endforeach
     </div>
+    
+    
+    @include('sweet::alert')

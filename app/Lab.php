@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Lab extends Model
 {
     protected $fillable = [
-        'location_id',
         'cpu_name',
         'cpu_assetno',
         'ip',
